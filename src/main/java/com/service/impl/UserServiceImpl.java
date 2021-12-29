@@ -1,13 +1,13 @@
 package com.service.impl;
 
-import com.config.security.EncoderConfig;
+//import com.config.security.EncoderConfig;
 import com.domain.User;
 import com.repository.UserRepository;
 import com.service.UserService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,15 +18,15 @@ import org.springframework.transaction.annotation.Transactional;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserServiceImpl implements UserService {
 
-    PasswordEncoder encoder;
+//    PasswordEncoder encoder;
 
     UserRepository repository;
 
     @Override
     public void add(User user) {
         String password = user.getPassword();
-        String encodedPassword = encoder.encode(password);
-        user.setPassword(encodedPassword);
+//        String encodedPassword = encoder.encode(password);
+//        user.setPassword(encodedPassword);
         repository.save(user);
     }
 
